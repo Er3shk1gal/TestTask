@@ -9,7 +9,7 @@ for (int i = 0; i < 3; i++)
     {
         while (!token.IsCancellationRequested)
         {
-            Console.WriteLine($"Читатель {Task.CurrentId}: сумма = {Server.GetCount()}");
+            Console.WriteLine($"Reader {Task.CurrentId}: summ = {Server.GetCount()}");
             Thread.Sleep(500);
         }
     }, token);
@@ -24,7 +24,7 @@ for (int i = 0; i < 2; i++)
         {
             int value = random.Next(1, 5);
             Server.AddToCount(value);
-            Console.WriteLine($"Писатель {Task.CurrentId}: добавил {value}");
+            Console.WriteLine($"Writer {Task.CurrentId}: added {value}");
             Thread.Sleep(1500);
         }
     }, token);
