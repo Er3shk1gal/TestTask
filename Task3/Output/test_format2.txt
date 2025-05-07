@@ -1,0 +1,3 @@
+2025-03-10 15:14:51.5882| INFO|11|MobileComputer.GetDeviceId| Код устройства: '@MINDEO-M40-D-410244015546'
+2025-03-11 09:45:30.1234| WARN|42|NetworkManager.CheckConnection| Потеряно соединение с сервером
+2025-03-12 18:30:45.9876| DEBUG|7|DataProcessor.ValidateInput| Начата валидация входных данных
