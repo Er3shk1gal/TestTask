@@ -8,12 +8,14 @@ public static class StringCompressor
     {
         if (string.IsNullOrEmpty(inputString))
         {
+            Console.WriteLine("Input string is empty!");
             return "";
         }
 
         if (inputString.Any(x => !char.IsLower(x) || !char.IsLetter(x)))
         {
-            throw new Exception("Входная строка должна состоять из маленьких букв латинского алфавита.");
+            Console.WriteLine("Input string should consist of lowercase letters of the Latin alphabet!");
+            throw new Exception("Input string should consist of lowercase letters of the Latin alphabet!");
         }
 
         StringBuilder compressedStringBuilder = new StringBuilder();
@@ -51,13 +53,15 @@ public static class StringCompressor
     {
         if (string.IsNullOrEmpty(compresedString))
         {
+            Console.WriteLine("Input string is empty!");
             return string.Empty;
         }
         
         if (char.IsDigit(compresedString[0]) || 
             compresedString.Any(c => !char.IsLower(c) && !char.IsDigit(c)))
         {
-            throw new Exception("Входная строка должна состоять из маленьких букв латинского алфавита.");
+            Console.WriteLine("Input string should consist of lowercase letters of the Latin alphabet!");
+            throw new Exception("Input string should consist of lowercase letters of the Latin alphabet!");
         }
         
         StringBuilder decompressedStringBuilder = new StringBuilder();
@@ -81,12 +85,14 @@ public static class StringCompressor
                 
                 if (numberStr.Length > 1 && numberStr[0] == '0')
                 {
-                    throw new ArgumentException($"Неверный формат '{numberStr}'!");
+                    Console.WriteLine($"Invalid format '{numberStr}'!");
+                    throw new ArgumentException($"Invalid format '{numberStr}'!");
                 }
                 
                 if (!int.TryParse(numberStr, out count) || count < 2)
                 {
-                    throw new ArgumentException($"Неверный формат '{numberStr}'!");
+                    Console.WriteLine($"Invalid format '{numberStr}'!");
+                    throw new ArgumentException($"Invalid format '{numberStr}'!");
                 }
             }
 
